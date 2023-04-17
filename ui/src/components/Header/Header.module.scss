@@ -1,0 +1,42 @@
+@use "../../../../packages/uikit/src/shared.module.scss";
+
+:root {
+  --header-height: 80px;
+  --header-blur: 14px;
+}
+
+.header {
+  width: 100%;
+  height: var(--header-height);
+  position: fixed;
+  top: 0px;
+  border-bottom: 1px solid  rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(var(--header-blur));
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  @media only screen and (max-width: 1248px) {
+    padding: 0 24px;
+  }
+}
+
+:root[data-theme="dark"] .header {
+  border-bottom: 1px solid  rgba(0, 0, 0, 0.6);
+}
+
+.headerContent {
+  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 300;
+  user-select: none;
+}

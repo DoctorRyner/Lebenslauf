@@ -1,0 +1,17 @@
+.languageSwitch {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  height: 45px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.popup {
+  position: absolute;
+  right: 0;
+  margin-top: 142px;
+}

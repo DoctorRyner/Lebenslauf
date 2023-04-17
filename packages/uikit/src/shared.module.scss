@@ -1,0 +1,62 @@
+@use "./theme.scss";
+
+.clickable {
+  cursor: pointer;
+
+  * {
+    cursor: pointer;
+  }
+}
+
+@mixin clickable {
+  @extend .clickable;
+}
+
+@mixin clickableHighlight() {
+  @extend .clickable;
+
+  transition: background-color 0.5s, transform 0.2s;
+
+  &:hover {
+    background-color: var(--contrast);
+  }
+  &:active {
+    transform: scale(98%);
+  }
+}
+
+@mixin selectedHighlight() {
+  @extend .clickable;
+
+  transition: background-color 0.5s, transform 0.2s;
+  background-color: var(--contraster);
+
+  &:hover {
+    background-color: var(--contrastest);
+  }
+  &:active {
+    transform: scale(98%);
+  }
+}
+
+$mobileWidth: 768px;
+
+@mixin mobile {
+  @media only screen and (max-width: $mobileWidth) {
+    @content;
+  }
+}
+
+@mixin notMobile {
+  @media only screen and (min-width: $mobileWidth) {
+    @content;
+  }
+}
+
+@mixin noSelect {
+  user-select: none !important;
+
+  * {
+    user-select: none !important;
+  }
+}

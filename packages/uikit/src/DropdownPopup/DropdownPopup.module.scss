@@ -1,0 +1,24 @@
+@use "../shared.module.scss";
+
+.dropdownPopupItem {
+  $offset: 14px;
+
+  height: 30px;
+  display: flex;
+  align-items: center;
+  margin-left: -$offset;
+  padding-left: $offset;
+  width: calc(100% + $offset * 2);
+
+  @include shared.clickableHighlight;
+  @include shared.noSelect;
+}
+
+.dropdownPopupIcon {
+  height: 16px;
+}
+
+.dropdownPopupText {
+  transform: translateY(1px);
+  padding-left: 8px;
+}

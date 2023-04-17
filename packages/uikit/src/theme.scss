@@ -1,0 +1,36 @@
+:root {
+  --theme: light;
+  --font: #1D2124;
+  --font-light: #8B8B8B;
+  --bg: #ffffff;
+  --border-color: rgba();
+  --card: #F4F4F4;
+  --accent: #FF813E;
+  --accent-light: #FFE1D5;
+  --accent-lighter: #FFF9F6;
+  --accent-alt: #FFDD00;
+  --contrast: rgba(0, 0, 0, 0.045);
+  --contraster: rgba(0, 0, 0, 0.085);
+  --contrastest: rgba(0, 0, 0, 0.085);
+  --shadow: rgba(0, 0, 0, 0.2);
+}
+
+:root[data-theme="dark"] {
+  --theme: dark;
+  --font: #F2F2F0;
+  --font-light: #C2CBD1;
+  --bg: #282828;
+  --card: #151515;
+  --accent: #FF813E;
+  --accent-light: #FFE1D5;
+  --accent-lighter: #FFF9F6;
+  --accent-alt: #FFDD00;
+  --contrast: rgba(255, 255, 255, 0.05);
+  --contraster: rgba(255, 255, 255, 0.07);
+  --contrastest: rgba(255, 255, 255, 0.07);
+  --shadow: rgba(0, 0, 0, 0.5);
+}
+
+.themeTransition {
+  transition: background-color 0.5s;
+}

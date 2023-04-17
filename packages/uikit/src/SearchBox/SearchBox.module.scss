@@ -1,0 +1,32 @@
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchBox {
+  all: unset;
+  display: block;
+  background-color: var(--bg);
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px var(--contraster);
+  padding-top: 5.7px;
+  padding-bottom: 5px;
+  padding-left: 38px;
+  padding-right: 11px;
+  transition: box-shadow 0.1s;
+  min-width: 0;
+  width: min(150px, 100%);
+}
+
+.searchBox:focus {
+  box-shadow: 0 0 0 1px var(--font-light);
+  transition: box-shadow 0.35s;
+}
+
+.magnifyingGlassIcon {
+  filter: invert(1);
+  height: 20px;
+  position: absolute;
+  left: 12px;
+}

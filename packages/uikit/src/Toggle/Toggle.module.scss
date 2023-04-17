@@ -1,0 +1,29 @@
+@use "../shared.module.scss";
+
+.toggle {
+  height: 22px;
+  width: 40px;
+  background-color: var(--card);
+  display: flex;
+  align-items: center;
+  padding: 0px 2px;
+  border-radius: 30px;
+  transition: background-color 0.65s, padding-left 0.4s;
+  box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.1);
+
+  @include shared.clickable;
+}
+
+.toggled {
+  background-color: #6EDC5F;
+  padding-left: 20px;
+  box-shadow: none;
+}
+
+.handle {
+  border-radius: 50%;
+  $height: 18px;
+  background-color: white;
+  height: $height;
+  width: $height;
+}

@@ -1,0 +1,16 @@
+// TODO: Write a JavaScript solution or come up with a better solution
+// This solution is VERY flowed but I don't intend to fix it right now
+// because I don't have much time
+
+.collapseBody {
+  max-height: 100px;
+  transition: max-height 0.4s, opacity 0.25s;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.shrinked {
+  transition: max-height 0.5s, opacity 0.5s;
+  max-height: 0;
+  opacity: 0;
+}

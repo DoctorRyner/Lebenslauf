@@ -1,0 +1,169 @@
+@use "shared";
+
+.menuIcon {
+  position: absolute;
+  height: 50px;
+  cursor: pointer;
+  right: 0;
+  opacity: 0.6;
+
+  @include shared.notMobile {
+    display: none;
+  }
+}
+
+:root[data-theme="dark"] .menuIcon {
+  filter: invert(1);
+}
+
+.searchBoxWrapper {
+  padding-top: 30px;
+}
+
+.sidebar {
+  height: 100%;
+  min-width: 235px;
+  width: 235px;
+  background-color: var(--card);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 24px;
+  padding-left: 20px;
+  transition: transform 0.5s;
+  overflow: hidden;
+
+  @include shared.mobile {
+    position: fixed;
+    z-index: 9999;
+  }
+}
+
+.sidebarClosed {
+  @include shared.mobile {
+    transform: translateX(calc(-267px));
+  }
+}
+
+.veil {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0);
+  pointer-events: none;
+  transition: background-color 0.5s, backdrop-filter 0.5s;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  @include shared.mobile {
+    pointer-events: unset;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+  }
+}
+
+.veilClosed {
+  @include shared.mobile {
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0);
+    pointer-events: none;
+  }
+}
+
+.title {
+  color: var(--accent);
+  font-size: 32px;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 24px;
+  margin-left: -20px;
+
+  @include shared.noSelect;
+}
+
+.itemTitle {
+  font-size: 14px;
+  font-weight: 500;
+  padding-left: 20px;
+
+  @include shared.clickable;
+  @include shared.noSelect;
+}
+
+.templateViewTitles {
+  padding-top: 3px;
+}
+
+.templateViewTitle {
+  padding-left: 20px;
+  padding-top: 2.5px;
+  padding-bottom: 1px;
+  font-weight: 300;
+  font-size: 13.5px;
+  cursor: pointer;
+  display: block;
+  
+  @include shared.clickableHighlight;
+}
+
+.selectedTemplateViewTitle {
+  @include shared.selectedHighlight;
+}
+
+.selectedTemplateViewTitle::before {
+  content: "•";
+  font-size: 36px;
+  color: #0077ff;
+  position: absolute;
+  transform: translateX(185px);
+}
+
+.darkModeToggleWrapper {
+  padding-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.darkModeLabel {
+  font-size: 13px;
+  font-weight: 300;
+  transform: translateY(0.5px);
+}
+
+.darkModeToggle {
+  padding-right: 15px;
+}
+
+.sidebarItemTitle {
+  position: relative;
+}
+
+.arrow {
+  border: solid var(--font);
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 3.5px;
+  position: absolute;
+  top: 6px;
+  right: 20px;
+  transition: all 0.25s;
+}
+
+.upArrow {
+  @extend .arrow;
+
+  top: 12px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.downArrow {
+  @extend .arrow;
+
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(45deg);
+}
