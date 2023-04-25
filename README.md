@@ -18,5 +18,4 @@ A convenient and easy-to-use custom i18n translation library.
 
 ### uikit
 
-A component library for building the user interface
-
+A component library for building the user interface.
